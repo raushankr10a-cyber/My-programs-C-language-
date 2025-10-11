@@ -1,0 +1,51 @@
+#define _USE_MATH_DEFINES
+#include <math.h>
+// float gstprice(float x) {
+//     return (1.18 * x);
+// }
+void area_square(){ double a;
+    printf("Enter the the side of square : ");
+    scanf("%lf",&a);
+    printf("Area is : %lf",a*a);
+}
+float area_circle( int r){
+   return (M_PI*r*r);
+}
+int area_rectangle(int a,int b){
+    return a*b;
+}
+int myfunction(void) { char g;
+while(1){
+  printf("Enter you geometry : \n Sqare = s \n Circle = c\n Rectangle = r \n ");
+  scanf(" %c",&g);
+  switch(g){
+      case 's' :{
+          area_square();
+          break;
+      }
+      case 'c' : { 
+          printf("Enter the radius :");
+          int r;
+          scanf("%d",& r);
+          float area = area_circle(r);
+          printf("Area is : %f",area); break;
+      }
+      case 'r' :{
+          int l, b ;
+          printf(" Enter length and breadth :\n");
+          scanf("%d%d",&l,&b);
+          int area = area_rectangle(l,b);
+          printf("Area is : %d",area); break;
+      }
+      default : {
+          printf("Enter the correct letter ");
+      }
+  }
+  printf("\n");
+}
+    return 0;
+} 
+int main(void){
+    myfunction();
+    return 0;
+}
