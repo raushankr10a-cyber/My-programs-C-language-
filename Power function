@@ -1,0 +1,18 @@
+#include <stdio.h>
+double power(int a,int b){
+    double n=1;
+    for(int i=1;i<=b;i++){
+        n=n*a;
+    }
+    return n;
+}
+int main() {
+  printf("Enter the base number : \n");
+  int y;
+  scanf("%d",&y);
+  printf("Enter the exponent number : \n");
+  int x;
+  scanf("%d",&x);
+  printf("Result : %lf",power(y,x));
+    return 0;
+}
