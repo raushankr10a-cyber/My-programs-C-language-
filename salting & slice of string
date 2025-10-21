@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+char *slice(char array[]){
+    int m,n ;
+    printf("Enter the index from where you want to slice the string : ");
+    scanf("%d",&m);
+    printf("Enter the index upto which you want to slice the string : ");
+    scanf("%d",&n);
+    static char sliced[100];
+    int x;
+    for(int i=m;i<=n;i++){
+       sliced[i-m] = array[i];
+       x=i-m;
+    }
+    sliced[x+1]='\0';
+    return sliced;
+}
+char* salting(char pass[]){
+   char salt[]= "123" ;
+   static char newpass[200];
+   strcpy(newpass,pass);
+   strcat(newpass,salt);
+   return newpass;
+
+}
+int main(){
+    printf("Enter your password : ");
+    char pass[100];
+    scanf("%s",pass);
+    puts(slice(pass));
+    printf("%s",salting(pass));
+    return 0;
+}
